@@ -1,0 +1,16 @@
+[versions]
+
+lombok = '1.18.34'
+guava = '32.1.2-jre'
+junit = '4.13.2'
+dependencycheck = '12.1.6'
+
+[libraries]
+
+lombok = {module = "org.projectlombok:lombok", version.ref = "lombok"}
+guava = {module = "com.google.guava:guava", version.ref = "guava"}
+junit = {module = "junit:junit", version.ref = "junit"}
+
+[plugins]
+
+dependencycheck = {id = "org.owasp.dependencycheck", version.ref = "dependencycheck"}
