@@ -4,8 +4,8 @@
  * This generated file contains a sample Java application project to get you started.
  * For more details on building Java & JVM projects, please refer to https://docs.gradle.org/8.4/userguide/building_java_projects.html in the Gradle documentation.
  */
-
 plugins {
+    id 'org.owasp.dependencycheck' version "12.1.6"
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
 }
@@ -33,4 +33,11 @@ java {
 application {
     // Define the main class for the application.
     mainClass = 'dependency.check.experiment.App'
+
+    dependencyCheck {
+        // Required for the NVD CVE data (which is used to determine project vulnerabilities, plugin org.owasp.dependencycheck).
+        // https://nvd.nist.gov/general/news/API-Key-Announcement
+        // https://nvd.nist.gov/developers/request-an-api-key
+        nvd.apiKey = "0e1fde9b-d6f1-4d0f-a7e3-30352074c872"
+    }
 }
